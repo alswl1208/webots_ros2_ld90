@@ -6,6 +6,7 @@
 EXTERNPROTO "./SickLms291.proto"
 EXTERNPROTO "./LD90RearDistanceSensor.proto"
 EXTERNPROTO "./RPLidar.proto"
+EXTERNPROTO "./SalusSuite.proto"
 
 PROTO LD90 [
   field  SFVec3f     translation     0 0 0
@@ -18,6 +19,7 @@ PROTO LD90 [
   field  SFBool      synchronization TRUE          # Is `Robot.synchronization`.
   field  SFBool      selfCollision   FALSE         # Is `Robot.selfCollision`.
   field  MFNode      extensionSlotMainLIDAR   [ SickLms291 { } ]  # Extends the robot with new nodes in the extension slot.  
+  field  MFNode      bodySlot         []                  # Extends the robot with new nodes located in the body.
 ]
 {
   Robot {
@@ -55,7 +57,11 @@ PROTO LD90 [
         near 0.35 
         minRange 0.35 
         maxRange 5.000000      
-      }             
+      }        
+      Pose {
+        translation 0.037646 0 0.349
+        children IS bodySlot
+      }
       Pose { # CAD Shape
         rotation 0.577350 0.577350 0.577350 2.094395
         children [
