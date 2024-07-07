@@ -54,6 +54,7 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/advertising_board/protos/AdvertisingBoard.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/chairs/protos/OfficeChair.proto"
 EXTERNPROTO "../protos/LD90.proto"
+EXTERNPROTO "../protos/SalusSuite.proto"
 
 WorldInfo {
   info [
@@ -2953,6 +2954,11 @@ RectangleArena {
 }
 LD90 {
   translation 48 -5 0
+  bodySlot [
+    SalusSuite {
+      controller "my_controller_salus"
+    }
+  ]
 }
 CardboardBox {
   translation -6.15 1.3 0.3
