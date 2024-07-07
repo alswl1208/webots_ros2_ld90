@@ -3674,4 +3674,9 @@ OilBarrel {
 }
 LD90 {
   translation 48 -5 0
+  bodySlot [
+    SalusSuite {
+      controller "my_controller_salus"
+    }
+  ]
 }
